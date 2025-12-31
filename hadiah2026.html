@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise untuk Mak!</title>
+    <style>
+        body {
+            background-color: #FFC0CB; /* Pink lembut */
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: 3em;
+            color: #FF1493; /* Deep pink */
+            margin-bottom: 50px;
+            animation: pulse 2s infinite;
+        }
+        p {
+            font-size: 2.5em;
+            color: #FF1493;
+            margin-bottom: 50px;
+        }
+        button {
+            background-color: #FF69B4;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+        button:hover {
+            background-color: #FF1493;
+            transform: scale(1.1);
+        }
+        .hidden {
+            display: none;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .heart {
+            color: #FF0000;
+            animation: beat 1.5s infinite;
+        }
+        @keyframes beat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div id="page1">
+        <h1>Selamat Tahun Baru Mak 😜<span class="heart">❤️</span></h1>
+        <button onclick="showPage2()">Lanjut</button>
+    </div>
+    
+    <div id="page2" class="hidden">
+        <p>Selamat tahun baru ya Mak, semoga tahun ini kita makin kaya, dan panjang umur, kaya nya segini dulu karna waktu buat nya sedikit 😜</p>
+        <button onclick="showPage1()">Kembali</button>
+    </div>
+
+    <script>
+        function showPage2() {
+            document.getElementById('page1').classList.add('hidden');
+            document.getElementById('page2').classList.remove('hidden');
+        }
+        
+        function showPage1() {
+            document.getElementById('page2').classList.add('hidden');
+            document.getElementById('page1').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
